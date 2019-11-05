@@ -3,7 +3,7 @@ pipeline {
   stages {
    stage('syntax') {
     steps {
-     sh 'python -m my_compile program.py'
+     sh 'python -m py_compile program.py'
     }
    }
    stage('testing') {
