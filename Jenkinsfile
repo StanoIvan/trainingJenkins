@@ -14,12 +14,13 @@ pipeline {
   stage('deploy') {
     steps {
      sh 'echo "deploy"'
+     sh 'echo "data subor" > generatedFile.txt' 
     }
    }    
   }
   post {
     always {
-      archiveArtifacts artifacts: 'generatedFile.txt', onlySuccessful: true
+      archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
     }
   }  
 }
